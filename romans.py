@@ -1,7 +1,96 @@
 romanNum = input("Введите римскую цифру от 1 до 39")
+flag=[]
+
 
 romanNumSplit = list(romanNum)
 
+#=========================проверяем все исключения==========================
+
+#8 число не может быть длиннее 8 символов
+if len(romanNumSplit) > 8:
+    romanNumSplit = ['хуйня']
+
+#1. не может быть больше четырех Х
+
+for i in range(len(romanNumSplit)):
+    if romanNumSplit[i] == 'X' or romanNumSplit[i] == 'x':
+        flag.append(1)
+f2 = sum(flag)
+if f2 > 3:
+    romanNumSplit = ['хуйня']
+else:
+    flag=[]
+
+#3 не может быть боль трёх i подряд
+
+for i in range(len(romanNumSplit)):
+    if romanNumSplit[i] == 'I' or romanNumSplit[i] == 'i':
+        flag.append(1)
+        print (flag)
+f2 = sum(flag)
+if f2 > 3:
+    romanNumSplit = ['хуйня']
+else:
+    flag=[]
+
+
+#4 не может быть боль одного V подряд
+
+for i in range(len(romanNumSplit)):
+    if romanNumSplit[i] == 'V' or romanNumSplit[i] == 'v':
+        flag.append(1)
+        print (flag)
+f2 = sum(flag)
+if f2 > 1:
+    romanNumSplit = ['хуйня']
+else:
+    flag=[]
+
+
+#5 не может быть боль одного С подряд
+
+
+for i in range(len(romanNumSplit)):
+    if romanNumSplit[i] == 'C' or romanNumSplit[i] == 'c':
+        flag.append(1)
+        print (flag)
+f2 = sum(flag)
+if f2 > 1:
+    romanNumSplit = ['хуйня']
+else:
+    flag=[]
+
+
+#5 не может быть боль одного L подряд
+
+
+for i in range(len(romanNumSplit)):
+    if romanNumSplit[i] == 'L' or romanNumSplit[i] == 'l':
+        flag.append(1)
+        print (flag)
+f2 = sum(flag)
+if f2 > 1:
+    romanNumSplit = ['хуйня']
+else:
+    flag=[]
+
+
+#2. не может быть больше 3ёх Х подряд !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+for k in range(len(romanNumSplit)-1):
+     if romanNumSplit[k] == romanNumSplit[k+1]:
+         flag.append(1)
+         print (flag)
+f2 = sum(flag)
+if f2 > 3:
+    romanNumSplit = ['хуйня']
+else:
+    flag = []
+
+
+
+
+
+#7 I не могут быть не рядом??????????????????????????????????????????
 
 
 
@@ -12,10 +101,43 @@ for i in range(len(romanNumSplit)):
         romanNumSplit[i] = 5
     elif romanNumSplit[i] == 'I' or romanNumSplit[i] == 'i':
         romanNumSplit[i] = 1
+    elif romanNumSplit[i] == 'L' or romanNumSplit[i] == 'l':
+        romanNumSplit[i] = 50
+    elif romanNumSplit[i] == 'C' or romanNumSplit[i] == 'c':
+        romanNumSplit[i] = 100
+
+
+print (romanNumSplit)
+
+
+#==========90ка и слагаемые рядом==============
+
+
+if len(romanNumSplit)>1:
+    for k in range(len(romanNumSplit)-1):
+        if romanNumSplit[k] == 10 and romanNumSplit[k+1] == 100:     # колдовство номер 2
+            romanNumSplit[k] = 90
+            romanNumSplit.pop(k+1)
+else:
+    romanNumSplit = romanNumSplit
 
 
 
-#print(romanNumSplit)
+#==========50ка и слагаемые рядом==============
+
+
+if len(romanNumSplit)>1:
+    for k in range(len(romanNumSplit)-1):
+        if romanNumSplit[k] == 10 and romanNumSplit[k+1] == 50:     # колдовство номер 2
+            romanNumSplit[k] = 40
+            romanNumSplit.pop(k+1)
+else:
+    romanNumSplit = romanNumSplit
+
+
+
+
+
 
 
 
@@ -29,7 +151,7 @@ else:
 
 
 
-#print(romanNumSplit)
+print(romanNumSplit)
 
 
 
@@ -43,7 +165,7 @@ if len(romanNumSplit)>2:
 else:
     romanNumSplit=romanNumSplit
 
-#print(romanNumSplit)
+print(romanNumSplit)
 
 
 #==========пятёрка и слагаемые рядом==============
@@ -57,7 +179,7 @@ if len(romanNumSplit)>1:
 else:
     romanNumSplit=romanNumSplit
 
-#print(romanNumSplit)
+print(romanNumSplit)
 
 
 #==========десятка и слагаемые рядом==============
@@ -71,7 +193,7 @@ if len(romanNumSplit)>1:
 else:
     romanNumSplit = romanNumSplit
 
-#print(romanNumSplit)
+print(romanNumSplit)
 
 
 try:
