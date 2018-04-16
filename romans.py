@@ -26,7 +26,7 @@ else:
 for i in range(len(romanNumSplit)):
     if romanNumSplit[i] == 'I' or romanNumSplit[i] == 'i':
         flag.append(1)
-        print (flag)
+        #print (flag)
 f2 = sum(flag)
 if f2 > 3:
     romanNumSplit = ['хуйня']
@@ -39,7 +39,7 @@ else:
 for i in range(len(romanNumSplit)):
     if romanNumSplit[i] == 'V' or romanNumSplit[i] == 'v':
         flag.append(1)
-        print (flag)
+        #print (flag)
 f2 = sum(flag)
 if f2 > 1:
     romanNumSplit = ['хуйня']
@@ -53,7 +53,7 @@ else:
 for i in range(len(romanNumSplit)):
     if romanNumSplit[i] == 'C' or romanNumSplit[i] == 'c':
         flag.append(1)
-        print (flag)
+        #print (flag)
 f2 = sum(flag)
 if f2 > 1:
     romanNumSplit = ['хуйня']
@@ -67,7 +67,7 @@ else:
 for i in range(len(romanNumSplit)):
     if romanNumSplit[i] == 'L' or romanNumSplit[i] == 'l':
         flag.append(1)
-        print (flag)
+        #print (flag)
 f2 = sum(flag)
 if f2 > 1:
     romanNumSplit = ['хуйня']
@@ -77,9 +77,9 @@ else:
 
 #2. не может быть больше 3ёх Х подряд !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 for k in range(len(romanNumSplit)-1):
-     if romanNumSplit[k] == romanNumSplit[k+1]:
+     if romanNumSplit[k] == romanNumSplit[k-1]:
          flag.append(1)
-         print (flag)
+         #print (flag)
 f2 = sum(flag)
 if f2 > 3:
     romanNumSplit = ['хуйня']
@@ -91,6 +91,7 @@ else:
 
 
 #7 I не могут быть не рядом??????????????????????????????????????????
+#8 числа должны быть по убыванию кроме iv и ix  если v и x на последнем месте и XL если x на 1 ом месте и XC если X на первом месте
 
 
 
@@ -107,7 +108,7 @@ for i in range(len(romanNumSplit)):
         romanNumSplit[i] = 100
 
 
-print (romanNumSplit)
+#print (romanNumSplit)
 
 
 #==========90ка и слагаемые рядом==============
@@ -151,7 +152,7 @@ else:
 
 
 
-print(romanNumSplit)
+#print(romanNumSplit)
 
 
 
@@ -165,7 +166,7 @@ if len(romanNumSplit)>2:
 else:
     romanNumSplit=romanNumSplit
 
-print(romanNumSplit)
+#print(romanNumSplit)
 
 
 #==========пятёрка и слагаемые рядом==============
@@ -179,7 +180,7 @@ if len(romanNumSplit)>1:
 else:
     romanNumSplit=romanNumSplit
 
-print(romanNumSplit)
+#print(romanNumSplit)
 
 
 #==========десятка и слагаемые рядом==============
@@ -193,7 +194,7 @@ if len(romanNumSplit)>1:
 else:
     romanNumSplit = romanNumSplit
 
-print(romanNumSplit)
+#print(romanNumSplit)
 
 
 try:
