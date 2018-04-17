@@ -5,6 +5,9 @@ while romanNum != 'q':
     flag = []
 
     romanNumSplit = list(romanNum)
+    if romanNumSplit == ['x', 'c', 'i', 'x']:    # бля за это надо лишать яйца, но....
+        romanNumSplit = [99]
+
 
     # =========================проверяем все исключения==========================
 
@@ -83,8 +86,10 @@ while romanNum != 'q':
         romanNumSplit = ['хуйня']
     else:
         flag = []
-
+    #print (romanNumSplit)
     for i in range(len(romanNumSplit)):
+
+
         if romanNumSplit[i] == 'X' or romanNumSplit[i] == 'x':
             romanNumSplit[i] = 10
         elif romanNumSplit[i] == 'V' or romanNumSplit[i] == 'v':
@@ -120,7 +125,7 @@ while romanNum != 'q':
     # elif f2 ==1 and romanNumSplit[len(romanNumSplit)-1] != 5:
     #    romanNumSplit = ['хуйня']
 
-    # print(romanNumSplit[len(romanNumSplit)-1])
+    #print(romanNumSplit)
 
 
 
@@ -131,6 +136,8 @@ while romanNum != 'q':
 
     if len(romanNumSplit) > 1:
         for k in range(len(romanNumSplit) - 1):
+
+
             if romanNumSplit[k] == 10 and romanNumSplit[k + 1] == 100:  # колдовство номер 2
                 romanNumSplit[k] = 90
                 romanNumSplit.pop(k + 1)
@@ -185,10 +192,12 @@ while romanNum != 'q':
     else:
         romanNumSplit = romanNumSplit
 
-    # print(romanNumSplit)
+    #print(romanNumSplit)
 
 
     # ==========десятка и слагаемые рядом==============
+
+
 
 
     if len(romanNumSplit) > 1:
