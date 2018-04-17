@@ -1,11 +1,12 @@
+import time
 romanNum = 0
 
 while romanNum != 'q':
-    romanNum = input("Введите римскую цифру от 1 до 39. Для выхода введите 'q'")
+    romanNum = input("Введите римскую цифру от 1 до 100. Для выхода введите 'q'")
     flag = []
 
     romanNumSplit = list(romanNum)
-    if romanNumSplit == ['x', 'c', 'i', 'x']:    # бля за это надо лишать яйца, но....
+    if romanNumSplit == ['x', 'c', 'i', 'x'] or romanNumSplit == ['X', 'C', 'I', 'X']:    # бля за это надо лишать яйца, но....
         romanNumSplit = [99]
 
 
@@ -217,4 +218,6 @@ while romanNum != 'q':
     except TypeError:
         print("Нет такого числа")
 else:
+
     print("Memento quia pulvis es")
+    time.sleep(3)
