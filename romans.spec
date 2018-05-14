@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['romans.py'],
-             pathex=['C:\\Users\\Климко\\Desktop\\my-developer-dump'],
+             pathex=['C:\\Users\\Klimon\\Desktop\\my-developer-dump'],
              binaries=[],
              datas=[],
              hiddenimports=[],
