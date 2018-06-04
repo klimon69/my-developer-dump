@@ -3,7 +3,7 @@
 from PIL import Image, ImageTk
 import PIL.Image
 
-from Tkinter import *
+from tkinter import *
 #from Tkinter import messagebox
 #from Tkinter import filedialog
 import tkinter.filedialog
